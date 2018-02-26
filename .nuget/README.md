@@ -2,7 +2,7 @@
 ### Publishing to NuGet
 When you are ready to publish to NuGet follow these steps prior to publishing to the repository
 
-1. Navigate to [https://ci.appveyor.com/project/ahoefling/realsimplecircle](https://ci.appveyor.com/project/ahoefling/realsimplecircle) and retrieve the latest `.nupkg` from the build
+1. Navigate to [https://ci.appveyor.com/project/ahoefling/CircleButtonMenu](https://ci.appveyor.com/project/ahoefling/CircleButtonMenu) and retrieve the latest `.nupkg` from the build
 2. Publish `.nupkg` to NuGet
 
 ### Local Builds

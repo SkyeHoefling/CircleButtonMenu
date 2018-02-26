@@ -1,7 +1,8 @@
 var TARGET = Argument ("target", Argument ("t", "Default"));
 var VERSION = EnvironmentVariable ("APPVEYOR_BUILD_VERSION") ?? Argument("version", "0.0.9999");
 var CONFIG = Argument("configuration", EnvironmentVariable ("CONFIGURATION") ?? "Release");
-var SLN = "RealSimpleCircle.sln";
+var PROJECT_NAME = "CircleButtonMenu";
+var SLN = $"{PROJECT_NAME}.sln";
 
 Task("Libraries").Does(()=>
 {
@@ -19,7 +20,7 @@ Task ("NuGet")
     if(!DirectoryExists("./Build/nuget/"))
         CreateDirectory("./Build/nuget");
         
-	NuGetPack ("./.nuget/RealSimpleCircle.nuspec", new NuGetPackSettings { 
+	NuGetPack ($"./.nuget/{PROJECT_NAME}.nuspec", new NuGetPackSettings { 
 		Version = VERSION,
 		OutputDirectory = "./Build/nuget/",
 		BasePath = "./src"

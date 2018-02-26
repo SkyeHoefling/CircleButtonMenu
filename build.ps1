@@ -254,7 +254,7 @@ if ($Mono) { $cakeArguments += "-mono" }
 $cakeArguments += $ScriptArgs
 
 # run nuget command
-nuget restore RealSimpleCircle.sln
+nuget restore CircleButtonMenu.sln
 
 # Start Cake
 Write-Host "Running build script..."

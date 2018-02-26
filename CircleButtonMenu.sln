@@ -5,16 +5,16 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{96C56CB6-637D-4C10-A857-27B446B03887}"
 	ProjectSection(SolutionItems) = preProject
-		..\build.cake = ..\build.cake
-		..\build.ps1 = ..\build.ps1
-		..\build.sh = ..\build.sh
+		build.cake = build.cake
+		build.ps1 = build.ps1
+		build.sh = build.sh
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B23D4FD8-C9E2-4CFC-9ADA-8D432E51F831}"
 	ProjectSection(SolutionItems) = preProject
-		..\.nuget\CircleButtonMenu.nuspec = ..\.nuget\CircleButtonMenu.nuspec
-		..\.nuget\NuGet.config = ..\.nuget\NuGet.config
-		..\.nuget\README.md = ..\.nuget\README.md
+		.nuget\CircleButtonMenu.nuspec = .nuget\CircleButtonMenu.nuspec
+		.nuget\NuGet.config = .nuget\NuGet.config
+		.nuget\README.md = .nuget\README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CircleButtonMenu.Abstractions", "src\CircleButtonMenu.Abstractions\CircleButtonMenu.Abstractions.csproj", "{A8F865F8-1B35-4F95-883C-E4C51BF5C6C6}"
