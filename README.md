@@ -1,18 +1,18 @@
-# Real Simple Circle's for Xamarin.Forms
-A real simple circle component built for Xamarin.Forms
+# Circle Button Menu for Xamarin.Forms
+A Circle Button Menu Control for Xamarin.Forms
 
 ## Setup
 
-* Available on NuGet: [![NuGet](https://img.shields.io/nuget/v/RealSimpleCircle.svg?label=NuGet)](https://www.nuget.org/packages/RealSimpleCircle)
+* Available on NuGet: [![NuGet](https://img.shields.io/nuget/v/CircleButtonMenu.svg?label=NuGet)](https://www.nuget.org/packages/CircleButtonMenu)
 * Install into your PCL/.NET Standard and Client Projects
 
 ## Build
 
-* [![Build status](https://ci.appveyor.com/api/projects/status/d0frm6gffguiclpy?svg=true)](https://ci.appveyor.com/project/ahoefling/realsimplecircle)
-* CI NuGet Feed: [https://ci.appveyor.com/nuget/realsimplecircle](https://ci.appveyor.com/nuget/realsimplecircle)
+* [![Build status](https://ci.appveyor.com/api/projects/status/eqdh0b3479m2lf40?svg=true)](https://ci.appveyor.com/project/ahoefling/circlebuttonmenu)
+* CI NuGet Feed: [https://ci.appveyor.com/nuget/CircleButtonMenu](https://ci.appveyor.com/nuget/CircleButtonMenu)
     
 ### Platform Support
-RealSimpleCircle is available for use in the following supported platforms.
+CircleButtonMenu is available for use in the following supported platforms.
 
 | Platform         | Supported | Version     |
 |------------------|-----------|-------------|
@@ -26,34 +26,41 @@ RealSimpleCircle is available for use in the following supported platforms.
 Add the namespace in the xmlns:
 
 ```xml
-xmlns:controls="clr-namespace:RealSimpleCircle.Abstractions;assembly=RealSimpleCircle.Abstractions"
+xmlns:controls="clr-namespace:CircleButtonMenu.Abstractions;assembly=CircleButtonMenu.Abstractions"
 ```
 
 Add the control:
 
 ```xml
-<controls:Circle FillColor="Black"
-                 StrokeColor="Red"
-				 Active="True" />
+<controls:CircleButtonMenu FillColor="Black"
+                           StrokeColor="Red"
+                           OpenImageSource="plus"
+                           CloseImageSource="minus"
+                           ItemsSource="{Binding Controls}"
+                           IndexSelected="{Binding ControlSelected}" />
+```
+
+View Model:
+```c#
+public IEnumerable<string> Controls = new [] { "resource1", "resource2" };
+public ICommand ControlSelected = new Command(() => /* do something */ );
 ```
 
 ## Bindable Properties
 
-| Property    | Description                                     | Default Value              |
-|-------------|-------------------------------------------------|----------------------------|
-| FillColor   | Gets or Sets the fill color for the circle.     | `Color.Black`              |
-| StrokeColor | Gets or Sets the circle border color            | `Color.Black`              |
-| Active      | Gets or Sets if the circle is active            | `False`                    |
+| Property          | Description                                     | Default Value              |
+|-------------------|-------------------------------------------------|----------------------------|
+| FillColor         | Gets or Sets the fill color for the circle.     | `Color.Black`              |
+| StrokeColor       | Gets or Sets the circle border color            | `Color.Black`              |
+| OpenImageSource   | Gets or Sets the open menu `ImageSource`        | `null`                     |
+| CloseImageSource  | Gets or Sets the close menu `ImageSource`       | `null`                     |
+| ItemsSource       | Gets or Sets the menu buttons                   | `null`                     |
+| IndexSelected     | Gets or Sets the command for IndexSelected      | `null`                     |
 
 ## Created By: [@Andrew_Hoefling](https://twitter.com/andrew_hoefling)
 
 * Twitter: [@Andrew_Hoefling](https://twitter.com/andrew_hoefling)
 * Blog: [andrewhoefling.com](http://www.andrewhoefling.com)
-
-## History
-I have worked on many Xamarin.Forms projects where I needed a really simple circle renderer. I always found myself searching the forums 
-for code snippets or copying code snippets from other projects. I decided this could be a valuable simple control to share with the community
-on NuGet.
 
 ### License
 
