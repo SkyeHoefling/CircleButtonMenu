@@ -16,9 +16,11 @@
     <dependencies>
       <group targetFramework="MonoAndroid10">
         <dependency id="Xamarin.Forms" version="2.5.0.280555"/>
+        <dependency id="RealSimpleCircle" version="1.0.7" />
       </group>
       <group targetFramework="Xamarin.iOS10">
         <dependency id="Xamarin.Forms" version="2.5.0.280555"/>
+        <dependency id="RealSimpleCircle" version="1.0.7" />
       </group>
     </dependencies>
   </metadata>
