@@ -14,8 +14,14 @@
     <releaseNotes>For changelog go to: https://github.com/ahoefling/RealSimpleCircle/blob/master/CHANGELOG.md</releaseNotes>
     <tags>Xamarin.Forms, Circle, Button, Menu, Animation</tags>
     <dependencies>
+      <group targetFramework="MonoAndroid">
         <dependency id="Xamarin.Forms" version="2.5.0.280555"/>
         <dependency id="RealSimpleCircle" version="1.0.7" />
+      </group>
+      <group targetFramework="Xamarin.iOS10">
+        <dependency id="Xamarin.Forms" version="2.5.0.280555"/>
+        <dependency id="RealSimpleCircle" version="1.0.7" />
+      </group>
     </dependencies>
   </metadata>
   <files>
