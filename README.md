@@ -22,6 +22,14 @@ CircleButtonMenu is available for use in the following supported platforms.
 
 ## Usage ##
 
+#### iOS and Android####
+Initialize the renderer in the AppDelegate (iOS) and MainActivity (Android)
+
+```c#
+Xamarin.Forms.Init();
+CircleButtonMenuRenderer.Init();
+```
+
 ### XAML: ####
 Add the namespace in the xmlns:
 

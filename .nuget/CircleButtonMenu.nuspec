@@ -27,5 +27,11 @@
   <files>
     <!-- shared -->
     <file src="..\src\CircleButtonMenu.Abstractions\bin\Release\netstandard1.4\CircleButtonMenu.Abstractions.*" target="lib\netstandard1.4" />
+    
+    <!-- iOS -->
+    <file src="..\src\CircleButtonMenu.iOS\bin\Release\CircleButtonMenu.*" target="lib\Xamarin.iOS10" />
+    
+    <!-- Android -->
+    <file src="..\src\CircleButtonMenu.Android\bin\Release\CircleButtonMenu.*" target="lib\MonoAndroid10" />
   </files>
 </package>

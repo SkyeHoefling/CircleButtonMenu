@@ -19,6 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B23D4F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CircleButtonMenu.Abstractions", "src\CircleButtonMenu.Abstractions\CircleButtonMenu.Abstractions.csproj", "{A8F865F8-1B35-4F95-883C-E4C51BF5C6C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircleButtonMenu.iOS", "src\CircleButtonMenu.iOS\CircleButtonMenu.iOS.csproj", "{3EA4E5D9-5159-4108-B5A9-81289E4BBBDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircleButtonMenu.Android", "src\CircleButtonMenu.Android\CircleButtonMenu.Android.csproj", "{79ED4893-163D-4F5B-B160-7470D2383B38}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,14 @@ Global
 		{A8F865F8-1B35-4F95-883C-E4C51BF5C6C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8F865F8-1B35-4F95-883C-E4C51BF5C6C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8F865F8-1B35-4F95-883C-E4C51BF5C6C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EA4E5D9-5159-4108-B5A9-81289E4BBBDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EA4E5D9-5159-4108-B5A9-81289E4BBBDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EA4E5D9-5159-4108-B5A9-81289E4BBBDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EA4E5D9-5159-4108-B5A9-81289E4BBBDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79ED4893-163D-4F5B-B160-7470D2383B38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79ED4893-163D-4F5B-B160-7470D2383B38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79ED4893-163D-4F5B-B160-7470D2383B38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79ED4893-163D-4F5B-B160-7470D2383B38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
