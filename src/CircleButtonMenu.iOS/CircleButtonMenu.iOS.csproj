@@ -35,10 +35,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="RealSimpleCircle.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\RealSimpleCircle.1.0.7\lib\Xamarin.iOS10\RealSimpleCircle.Abstractions.dll</HintPath>
+      <HintPath>..\..\packages\RealSimpleCircle.1.0.12\lib\Xamarin.iOS10\RealSimpleCircle.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="RealSimpleCircle.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\RealSimpleCircle.1.0.7\lib\Xamarin.iOS10\RealSimpleCircle.iOS.dll</HintPath>
+      <HintPath>..\..\packages\RealSimpleCircle.1.0.12\lib\Xamarin.iOS10\RealSimpleCircle.iOS.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
