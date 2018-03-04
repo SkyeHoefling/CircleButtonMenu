@@ -211,9 +211,9 @@ namespace CircleButtonMenu.Abstractions
         private static void OnItemsSourcePropertyChanged(BindableObject bindable, object oldValue, object newValue)
         {
             var context = (CircleButtonMenu)bindable;
-            if (context != null)
+            var items = (IEnumerable)newValue;
+            if (context != null && items != null)
             {
-                var items = (IEnumerable)newValue;
                 context.Grid.Children.Clear();
                 context.Buttons.Clear();
 
