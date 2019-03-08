@@ -1,11 +1,8 @@
-﻿using System;
-
+﻿
 using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using CircleButtonMenu.Android;
 
 namespace CircleButtonMenuSample.Droid
 {
@@ -19,6 +16,7 @@ namespace CircleButtonMenuSample.Droid
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            CircleButtonMenuRenderer.Init();
             LoadApplication(new App());
         }
     }

@@ -152,6 +152,16 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
+    <ProjectReference Include="..\..\src\CircleButtonMenu.Abstractions\CircleButtonMenu.Abstractions.csproj">
+      <Project>{a8f865f8-1b35-4f95-883c-e4c51bf5c6c6}</Project>
+      <Name>CircleButtonMenu.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\CircleButtonMenu.iOS\CircleButtonMenu.iOS.csproj">
+      <Project>{3ea4e5d9-5159-4108-b5a9-81289e4bbbdf}</Project>
+      <Name>CircleButtonMenu.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>
     <ProjectReference Include="..\CircleButtonMenuSample\CircleButtonMenuSample.csproj">
       <Project>{A4C98BEC-0CB1-4F11-936A-594902F01659}</Project>
       <Name>CircleButtonMenuSample</Name>
