@@ -45,6 +45,7 @@ Add the control:
                            StrokeColor="Red"
                            OpenImageSource="plus"
                            CloseImageSource="minus"
+                           Direction="DownLeft"
                            ItemsSource="{Binding Controls}"
                            IndexSelected="{Binding ControlSelected}" />
 ```
@@ -57,14 +58,15 @@ public ICommand ControlSelected = new Command(() => /* do something */ );
 
 ## Bindable Properties
 
-| Property          | Description                                     | Default Value              |
-|-------------------|-------------------------------------------------|----------------------------|
-| FillColor         | Gets or Sets the fill color for the circle.     | `Color.Black`              |
-| StrokeColor       | Gets or Sets the circle border color            | `Color.Black`              |
-| OpenImageSource   | Gets or Sets the open menu `ImageSource`        | `null`                     |
-| CloseImageSource  | Gets or Sets the close menu `ImageSource`       | `null`                     |
-| ItemsSource       | Gets or Sets the menu buttons                   | `null`                     |
-| IndexSelected     | Gets or Sets the command for IndexSelected      | `null`                     |
+| Property          | Description                                            | Default Value              | Version |
+|-------------------|--------------------------------------------------------|----------------------------|---------|
+| FillColor         | Gets or Sets the fill color for the circle.            | `Color.Black`              | v1.0.9  |
+| StrokeColor       | Gets or Sets the circle border color                   | `Color.Black`              | v1.0.9  |
+| OpenImageSource   | Gets or Sets the open menu `ImageSource`               | `null`                     | v1.0.9  |
+| CloseImageSource  | Gets or Sets the close menu `ImageSource`              | `null`                     | v1.0.9  |
+| ItemsSource       | Gets or Sets the menu buttons                          | `null`                     | v1.0.9  |
+| IndexSelected     | Gets or Sets the command for IndexSelected             | `null`                     | v1.0.9  |
+| Direction         | Gets or Sets the direction the controls will flyout in | `Up`                       | Preview |
 
 ## Created By: [@Andrew_Hoefling](https://twitter.com/andrew_hoefling)
 
