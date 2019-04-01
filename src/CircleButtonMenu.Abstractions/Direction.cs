@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CircleButtonMenu.Abstractions
+﻿namespace CircleButtonMenu.Abstractions
 {
     public enum Direction
     {
         Up = 0,
         Down,
         Right,
-        Left
+        Left,
+        UpRight,
+        DownRight,
+        UpLeft,
+        DownLeft
     }
 }

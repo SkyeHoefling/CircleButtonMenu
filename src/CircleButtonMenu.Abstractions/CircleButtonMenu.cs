@@ -47,7 +47,6 @@ namespace CircleButtonMenu.Abstractions
                     var baseDistance = 80;
                     var distance = baseDistance * (index + 1);
 
-                    // todo - handle direction and apply correct translation
                     var translateX = 0;
                     var translateY = 0;
 
@@ -64,6 +63,22 @@ namespace CircleButtonMenu.Abstractions
                             break;
                         case Direction.Right:
                             translateX = distance;
+                            break;
+                        case Direction.UpRight:
+                            translateY = (int)(-distance / 1.5);
+                            translateX = (int)(distance / 1.5);
+                            break;
+                        case Direction.UpLeft:
+                            translateY = (int)(-distance / 1.5);
+                            translateX = (int)(-distance /1.5);
+                            break;
+                        case Direction.DownRight:
+                            translateY = (int)(distance / 1.5);
+                            translateX = (int)(distance / 1.5);
+                            break;
+                        case Direction.DownLeft:
+                            translateY = (int)(distance / 1.5);
+                            translateX = (int)(-distance / 1.5);
                             break;
                     }
 

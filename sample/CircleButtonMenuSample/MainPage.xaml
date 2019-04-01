@@ -13,7 +13,7 @@
                                    OpenImageSource="plus"
                                    CloseImageSource="minus"
                                    ItemsSource="{Binding Controls}"
-                                   Direction="Down"
+                                   Direction="UpLeft"
                                    VerticalOptions="CenterAndExpand"
                                    HorizontalOptions="CenterAndExpand"/>  
         
