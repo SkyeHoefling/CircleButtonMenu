@@ -19,21 +19,12 @@ namespace CircleButtonMenu.Abstractions
             Buttons = new List<View>();
             Grid = new Grid
             {
-                // -- the padding is kind of a hack since --
-                // After translating controls they can only be fired
-                // if they are within the container bounds. Without the 
-                // padding they will be outside the bounds and not fire
-                // correctly.
-                // We should figure out a better way to do this, but it is
-                // okay for now
-                Padding = new Thickness(0, 0, 0, 300),
-                HorizontalOptions = LayoutOptions.End,
-                VerticalOptions = LayoutOptions.StartAndExpand,
+                Padding = new Thickness(0, 0, 0, 0),
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                VerticalOptions = LayoutOptions.CenterAndExpand,
                 Margin = new Thickness(0, 15, 15, 0)
             };
-
-
-
+                       
             CreateRootButton();
             Content = Grid;
         }
@@ -55,7 +46,28 @@ namespace CircleButtonMenu.Abstractions
                 {
                     var baseDistance = 80;
                     var distance = baseDistance * (index + 1);
-                    Buttons[index].TranslateTo(0, distance);
+
+                    // todo - handle direction and apply correct translation
+                    var translateX = 0;
+                    var translateY = 0;
+
+                    switch (Direction)
+                    {
+                        case Direction.Down:
+                            translateY = distance;
+                            break;
+                        case Direction.Left:
+                            translateX = -distance;
+                            break;
+                        case Direction.Up:
+                            translateY = -distance;
+                            break;
+                        case Direction.Right:
+                            translateX = distance;
+                            break;
+                    }
+
+                    Buttons[index].TranslateTo(translateX, translateY);
                 }
 
                 Grid.IsVisible = false;
@@ -124,6 +136,18 @@ namespace CircleButtonMenu.Abstractions
 
             Grid.Children.Add(newControl);
         }
+
+        public Direction Direction
+        {
+            get { return (Direction)GetValue(DirectionProperty); }
+            set { SetValue(DirectionProperty, value); }
+        }
+
+        public static readonly BindableProperty DirectionProperty = BindableProperty.Create(
+            nameof(Direction),
+            typeof(Direction),
+            typeof(CircleButtonMenu),
+            Direction.Up);
 
         public ICommand IndexSelected
         {

@@ -4,20 +4,23 @@
              xmlns:local="clr-namespace:CircleButtonMenuSample"
              xmlns:controls="clr-namespace:CircleButtonMenu.Abstractions;assembly=CircleButtonMenu.Abstractions"
              x:Class="CircleButtonMenuSample.MainPage">
-
-    <StackLayout>
+    
+    <StackLayout VerticalOptions="FillAndExpand"
+                 HorizontalOptions="FillAndExpand">
+    
         <controls:CircleButtonMenu FillColor="Gray"
                                    StrokeColor="Black"
                                    OpenImageSource="plus"
                                    CloseImageSource="minus"
                                    ItemsSource="{Binding Controls}"
-                                   VerticalOptions="StartAndExpand"
-                                   HorizontalOptions="EndAndExpand"/>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Circle Button Menu!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+                                   Direction="Down"
+                                   VerticalOptions="CenterAndExpand"
+                                   HorizontalOptions="CenterAndExpand"/>  
         
+        <Label Text="Welcome to Circle Button Menu!" 
+               HorizontalOptions="Center"
+               VerticalOptions="EndAndExpand" />
+
     </StackLayout>
 
 </ContentPage>
