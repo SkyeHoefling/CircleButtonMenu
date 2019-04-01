@@ -25,38 +25,46 @@
                    VerticalOptions="EndAndExpand" />
 
             <StackLayout Orientation="Horizontal">
-                <Button Text="Up Left" 
+                <Button Text="&#x2196;"
+                        FontSize="Large"
                         Command="{Binding ChangeDirection}" 
                         CommandParameter="{x:Static controls:Direction.UpLeft}" />
-                <Button Text="Up" 
+                <Button Text="&#x2191;" 
+                        FontSize="Large"
                         HorizontalOptions="CenterAndExpand"
                         Command="{Binding ChangeDirection}"
                         CommandParameter="{x:Static controls:Direction.Up}"/>
-                <Button Text="Up Right" 
+                <Button Text="&#x2197;"
+                        FontSize="Large"
                         HorizontalOptions="EndAndExpand"
                         Command="{Binding ChangeDirection}"
                         CommandParameter="{x:Static controls:Direction.UpRight}"/>
             </StackLayout>
             
             <StackLayout Orientation="Horizontal">
-                <Button Text="Left"
+                <Button Text="&#x2190;"
+                        FontSize="Large"
                         Command="{Binding ChangeDirection}"
                         CommandParameter="{x:Static controls:Direction.Left}"/>
-                <Button Text="Right" 
+                <Button Text="&#x2192;" 
+                        FontSize="Large"
                         HorizontalOptions="EndAndExpand"
                         Command="{Binding ChangeDirection}"
                         CommandParameter="{x:Static controls:Direction.Right}"/>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
-                <Button Text="Down Left"
+                <Button Text="&#x2199;"
+                        FontSize="Large"
                         Command="{Binding ChangeDirection}"
                         CommandParameter="{x:Static controls:Direction.DownLeft}"/>
-                <Button Text="Down" 
+                <Button Text="&#x2193;" 
+                        FontSize="Large"
                         HorizontalOptions="CenterAndExpand"
                         Command="{Binding ChangeDirection}"
                         CommandParameter="{x:Static controls:Direction.Down}"/>
-                <Button Text="Down Right" 
+                <Button Text="&#x2198;" 
+                        FontSize="Large"
                         HorizontalOptions="EndAndExpand"
                         Command="{Binding ChangeDirection}"
                         CommandParameter="{x:Static controls:Direction.DownRight}"/>
