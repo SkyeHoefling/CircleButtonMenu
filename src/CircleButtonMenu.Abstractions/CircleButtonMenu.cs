@@ -29,6 +29,46 @@ namespace CircleButtonMenu.Abstractions
             Content = Grid;
         }
 
+        private (int TranslateX, int TranslateY) GetTranslation(int distance)
+        {
+            var translateX = 0;
+            var translateY = 0;
+
+            switch (Direction)
+            {
+                case Direction.Down:
+                    translateY = distance;
+                    break;
+                case Direction.Left:
+                    translateX = -distance;
+                    break;
+                case Direction.Up:
+                    translateY = -distance;
+                    break;
+                case Direction.Right:
+                    translateX = distance;
+                    break;
+                case Direction.UpRight:
+                    translateY = (int)(-distance / 1.5);
+                    translateX = (int)(distance / 1.5);
+                    break;
+                case Direction.UpLeft:
+                    translateY = (int)(-distance / 1.5);
+                    translateX = (int)(-distance / 1.5);
+                    break;
+                case Direction.DownRight:
+                    translateY = (int)(distance / 1.5);
+                    translateX = (int)(distance / 1.5);
+                    break;
+                case Direction.DownLeft:
+                    translateY = (int)(distance / 1.5);
+                    translateX = (int)(-distance / 1.5);
+                    break;
+            }
+
+            return (translateX, translateY);
+        }
+
         private void TapRootButton(object sender, EventArgs e)
         {
             if (IsOpened)
@@ -47,42 +87,9 @@ namespace CircleButtonMenu.Abstractions
                     var baseDistance = 80;
                     var distance = baseDistance * (index + 1);
 
-                    var translateX = 0;
-                    var translateY = 0;
+                    var translation = GetTranslation(distance);
 
-                    switch (Direction)
-                    {
-                        case Direction.Down:
-                            translateY = distance;
-                            break;
-                        case Direction.Left:
-                            translateX = -distance;
-                            break;
-                        case Direction.Up:
-                            translateY = -distance;
-                            break;
-                        case Direction.Right:
-                            translateX = distance;
-                            break;
-                        case Direction.UpRight:
-                            translateY = (int)(-distance / 1.5);
-                            translateX = (int)(distance / 1.5);
-                            break;
-                        case Direction.UpLeft:
-                            translateY = (int)(-distance / 1.5);
-                            translateX = (int)(-distance /1.5);
-                            break;
-                        case Direction.DownRight:
-                            translateY = (int)(distance / 1.5);
-                            translateX = (int)(distance / 1.5);
-                            break;
-                        case Direction.DownLeft:
-                            translateY = (int)(distance / 1.5);
-                            translateX = (int)(-distance / 1.5);
-                            break;
-                    }
-
-                    Buttons[index].TranslateTo(translateX, translateY);
+                    Buttons[index].TranslateTo(translation.TranslateX, translation.TranslateY);
                 }
 
                 Grid.IsVisible = false;
