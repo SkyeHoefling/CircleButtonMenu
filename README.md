@@ -20,6 +20,7 @@ CircleButtonMenu is available for use in the following supported platforms.
 | Xamarin.iOS      | Yes       | iOS 10 +    |
 
 ![Demo](demo.gif)
+![Demo-Circle](demo-circle.gif)
 
 ## Usage ##
 
@@ -46,6 +47,7 @@ Add the control:
                            OpenImageSource="plus"
                            CloseImageSource="minus"
                            Direction="DownLeft"
+						   Flow="Expand"
                            ItemsSource="{Binding Controls}"
                            IndexSelected="{Binding ControlSelected}" />
 ```
@@ -67,6 +69,7 @@ public ICommand ControlSelected = new Command(() => /* do something */ );
 | ItemsSource       | Gets or Sets the menu buttons                          | `null`                     | v1.0.9  |
 | IndexSelected     | Gets or Sets the command for IndexSelected             | `null`                     | v1.0.9  |
 | Direction         | Gets or Sets the direction the controls will flyout in | `Up`                       | Preview |
+| Flow              | Gets or Sets the flow of the controls, ex: Snake       | `Expand`                   | Preview |
 
 ## Created By: [@Andrew_Hoefling](https://twitter.com/andrew_hoefling)
 
