@@ -15,7 +15,7 @@
                                    CloseImageSource="minus"
                                    ItemsSource="{Binding Controls}"
                                    Direction="Circle"
-                                   Flow="Snake"
+                                   Flow="Expand"
                                    VerticalOptions="CenterAndExpand"
                                    HorizontalOptions="CenterAndExpand"/>
 
