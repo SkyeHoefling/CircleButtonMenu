@@ -14,7 +14,7 @@
                                    OpenImageSource="plus"
                                    CloseImageSource="minus"
                                    ItemsSource="{Binding Controls}"
-                                   Direction="Square"
+                                   Direction="Circle"
                                    VerticalOptions="CenterAndExpand"
                                    HorizontalOptions="CenterAndExpand"/>
 
@@ -31,12 +31,12 @@
                         CommandParameter="{x:Static controls:Direction.UpLeft}" />
                 <Button Text="&#x2191;" 
                         FontSize="Large"
-                        HorizontalOptions="CenterAndExpand"
+                        HorizontalOptions="FillAndExpand"
                         Command="{Binding ChangeDirection}"
                         CommandParameter="{x:Static controls:Direction.Up}"/>
                 <Button Text="&#x2197;"
                         FontSize="Large"
-                        HorizontalOptions="EndAndExpand"
+                        HorizontalOptions="End"
                         Command="{Binding ChangeDirection}"
                         CommandParameter="{x:Static controls:Direction.UpRight}"/>
             </StackLayout>
@@ -46,6 +46,14 @@
                         FontSize="Large"
                         Command="{Binding ChangeDirection}"
                         CommandParameter="{x:Static controls:Direction.Left}"/>
+                <Button Text="&#x26AC;"
+                        FontSize="Large"
+                        Command="{Binding ChangeDirection}"
+                        CommandParameter="{x:Static controls:Direction.Circle}"/>
+                <Button Text="&#x2610;" 
+                        FontSize="Medium"
+                        Command="{Binding ChangeDirection}"
+                        CommandParameter="{x:Static controls:Direction.Square}"/>    
                 <Button Text="&#x2192;" 
                         FontSize="Large"
                         HorizontalOptions="EndAndExpand"
@@ -60,12 +68,12 @@
                         CommandParameter="{x:Static controls:Direction.DownLeft}"/>
                 <Button Text="&#x2193;" 
                         FontSize="Large"
-                        HorizontalOptions="CenterAndExpand"
+                        HorizontalOptions="FillAndExpand"
                         Command="{Binding ChangeDirection}"
                         CommandParameter="{x:Static controls:Direction.Down}"/>
                 <Button Text="&#x2198;" 
                         FontSize="Large"
-                        HorizontalOptions="EndAndExpand"
+                        HorizontalOptions="End"
                         Command="{Binding ChangeDirection}"
                         CommandParameter="{x:Static controls:Direction.DownRight}"/>
             </StackLayout>
