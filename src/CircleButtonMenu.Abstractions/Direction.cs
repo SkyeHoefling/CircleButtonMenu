@@ -10,6 +10,7 @@
         DownLeft,
         Left,
         UpLeft,
-        Circle
+        Circle,
+        Square
     }
 }

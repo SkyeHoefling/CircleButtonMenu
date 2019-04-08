@@ -83,7 +83,6 @@ namespace CircleButtonMenu.Abstractions
             {
                 RootImage.Source = CloseImageSource;
                 int baseDistance = 80;
-                int offset = 0;
 
                 for (int index = 0; index < Buttons.Count; index++)
                 {
@@ -91,10 +90,26 @@ namespace CircleButtonMenu.Abstractions
 
                     if (Direction == Direction.Circle)
                     {
-                        if ((Direction)index == Direction.Circle) offset++;
+                        // todo - clean up redundent logic
+                        if ((Direction)index == Direction.Circle || (Direction)index == Direction.Square) continue;
 
-                        var direction = (Direction)(index + offset);
+                        var direction = (Direction)index;
                         translation = GetTranslation(baseDistance, direction);
+                    }
+                    else if (Direction == Direction.Square)
+                    {
+                        if ((Direction)index == Direction.Circle || (Direction)index == Direction.Square) continue;
+
+                        var direction = (Direction)index;
+                        var corners = new[] { Direction.UpLeft, Direction.UpRight, Direction.DownRight, Direction.DownLeft };
+
+                        var distance = baseDistance;
+                        if (corners.Contains(direction))
+                        {
+                            distance = (int)(distance * 1.5);
+                        }
+
+                        translation = GetTranslation(distance, direction);
                     }
                     else
                     {

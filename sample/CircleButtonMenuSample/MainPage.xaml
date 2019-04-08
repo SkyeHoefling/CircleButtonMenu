@@ -14,7 +14,7 @@
                                    OpenImageSource="plus"
                                    CloseImageSource="minus"
                                    ItemsSource="{Binding Controls}"
-                                   Direction="Circle"
+                                   Direction="Square"
                                    VerticalOptions="CenterAndExpand"
                                    HorizontalOptions="CenterAndExpand"/>
 
