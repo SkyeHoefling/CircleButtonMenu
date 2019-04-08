@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -69,7 +70,7 @@ namespace CircleButtonMenu.Abstractions
             return (translateX, translateY);
         }
 
-        private void TapRootButton(object sender, EventArgs e)
+        private async void TapRootButton(object sender, EventArgs e)
         {
             if (IsOpened)
             {
@@ -83,7 +84,7 @@ namespace CircleButtonMenu.Abstractions
             {
                 RootImage.Source = CloseImageSource;
                 int baseDistance = 80;
-
+                               
                 for (int index = 0; index < Buttons.Count; index++)
                 {
                     (int TranslateX, int TranslateY) translation;
@@ -93,8 +94,29 @@ namespace CircleButtonMenu.Abstractions
                         // todo - clean up redundent logic
                         if ((Direction)index == Direction.Circle || (Direction)index == Direction.Square) continue;
 
-                        var direction = (Direction)index;
-                        translation = GetTranslation(baseDistance, direction);
+                        if (Flow == Flow.Snake)
+                        {
+                            Direction direction = Direction.Up;
+                            if (index > 0)
+                            {
+                                direction = (Direction)index;
+                            }
+
+                            var currentButtons = Buttons.Skip(index + 1).ToList();
+
+                            translation = GetTranslation(baseDistance, direction);
+                            foreach (var current in currentButtons)
+                            {
+                                current.TranslateTo(translation.TranslateX, translation.TranslateY, 125);
+                            }
+                            
+                            await Task.Delay(125);
+                        }
+                        else
+                        {
+                            var direction = (Direction)index;
+                            translation = GetTranslation(baseDistance, direction);
+                        }
                     }
                     else if (Direction == Direction.Square)
                     {
@@ -117,7 +139,10 @@ namespace CircleButtonMenu.Abstractions
                         translation = GetTranslation(distance, Direction);
                     }
 
-                    Buttons[index].TranslateTo(translation.TranslateX, translation.TranslateY);
+                    if (Flow != Flow.Snake)
+                    {
+                        Buttons[index].TranslateTo(translation.TranslateX, translation.TranslateY);
+                    }
                 }
 
                 Grid.IsVisible = false;
@@ -186,6 +211,18 @@ namespace CircleButtonMenu.Abstractions
 
             Grid.Children.Add(newControl);
         }
+
+        public Flow Flow
+        {
+            get { return (Flow)GetValue(FlowProperty); }
+            set { SetValue(FlowProperty, value); }
+        }
+
+        public static readonly BindableProperty FlowProperty = BindableProperty.Create(
+            nameof(Flow),
+            typeof(Flow),
+            typeof(CircleButtonMenu),
+            Flow.Expand);
 
         public Direction Direction
         {
