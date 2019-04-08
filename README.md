@@ -47,7 +47,7 @@ Add the control:
                            OpenImageSource="plus"
                            CloseImageSource="minus"
                            Direction="DownLeft"
-						   Flow="Expand"
+                           Flow="Expand"
                            ItemsSource="{Binding Controls}"
                            IndexSelected="{Binding ControlSelected}" />
 ```
