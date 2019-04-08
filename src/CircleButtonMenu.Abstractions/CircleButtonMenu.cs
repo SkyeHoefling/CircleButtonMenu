@@ -29,12 +29,12 @@ namespace CircleButtonMenu.Abstractions
             Content = Grid;
         }
 
-        private (int TranslateX, int TranslateY) GetTranslation(int distance)
+        private (int TranslateX, int TranslateY) GetTranslation(int distance, Direction currentDirection)
         {
             var translateX = 0;
             var translateY = 0;
 
-            switch (Direction)
+            switch (currentDirection)
             {
                 case Direction.Down:
                     translateY = distance;
@@ -82,14 +82,32 @@ namespace CircleButtonMenu.Abstractions
             else
             {
                 RootImage.Source = CloseImageSource;
-                for (int index = 0; index < Buttons.Count; index++)
+
+                if (Direction == Direction.Circle)
                 {
-                    var baseDistance = 80;
-                    var distance = baseDistance * (index + 1);
+                    int offset = 0;
+                    for (int index = 0; index < Buttons.Count; index++)
+                    {
+                        if ((Direction)index == Direction.Circle) offset++;
 
-                    var translation = GetTranslation(distance);
+                        var distance = 80;
+                        var direction = (Direction)(index + offset);
+                        var translation = GetTranslation(distance, direction);
 
-                    Buttons[index].TranslateTo(translation.TranslateX, translation.TranslateY);
+                        Buttons[index].TranslateTo(translation.TranslateX, translation.TranslateY);
+                    }
+                }
+                else
+                {
+                    for (int index = 0; index < Buttons.Count; index++)
+                    {
+                        var baseDistance = 80;
+                        var distance = baseDistance * (index + 1);
+
+                        var translation = GetTranslation(distance, Direction);
+
+                        Buttons[index].TranslateTo(translation.TranslateX, translation.TranslateY);
+                    }
                 }
 
                 Grid.IsVisible = false;

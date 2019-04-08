@@ -11,7 +11,7 @@ namespace CircleButtonMenuSample
             InitializeComponent();
             BindingContext = new
             {
-                Controls = new[] { "waves", "save", "sound" },
+                Controls = new[] { "waves", "save", "sound", "waves", "save", "sound", "waves", "save", "sound" },
                 ChangeDirection = new Command<Direction>(OnChangeDirection)
             };
         }
