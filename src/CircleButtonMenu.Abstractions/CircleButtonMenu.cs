@@ -82,32 +82,27 @@ namespace CircleButtonMenu.Abstractions
             else
             {
                 RootImage.Source = CloseImageSource;
+                int baseDistance = 80;
+                int offset = 0;
 
-                if (Direction == Direction.Circle)
+                for (int index = 0; index < Buttons.Count; index++)
                 {
-                    int offset = 0;
-                    for (int index = 0; index < Buttons.Count; index++)
+                    (int TranslateX, int TranslateY) translation;
+
+                    if (Direction == Direction.Circle)
                     {
                         if ((Direction)index == Direction.Circle) offset++;
 
-                        var distance = 80;
                         var direction = (Direction)(index + offset);
-                        var translation = GetTranslation(distance, direction);
-
-                        Buttons[index].TranslateTo(translation.TranslateX, translation.TranslateY);
+                        translation = GetTranslation(baseDistance, direction);
                     }
-                }
-                else
-                {
-                    for (int index = 0; index < Buttons.Count; index++)
+                    else
                     {
-                        var baseDistance = 80;
                         var distance = baseDistance * (index + 1);
-
-                        var translation = GetTranslation(distance, Direction);
-
-                        Buttons[index].TranslateTo(translation.TranslateX, translation.TranslateY);
+                        translation = GetTranslation(distance, Direction);
                     }
+
+                    Buttons[index].TranslateTo(translation.TranslateX, translation.TranslateY);
                 }
 
                 Grid.IsVisible = false;
